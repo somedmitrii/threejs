@@ -1,8 +1,10 @@
-import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "lil-gui";
+
 import { house } from "./house";
+import { graves } from "./graves";
+import "./style.css";
 
 /**
  * Base
@@ -22,6 +24,7 @@ const scene = new THREE.Scene();
 const textureLoader = new THREE.TextureLoader();
 
 scene.add(house);
+scene.add(graves);
 
 // Floor
 const floor = new THREE.Mesh(
