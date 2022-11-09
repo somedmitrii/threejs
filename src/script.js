@@ -2,6 +2,7 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "lil-gui";
+import { house } from "./house";
 
 /**
  * Base
@@ -20,16 +21,7 @@ const scene = new THREE.Scene();
  */
 const textureLoader = new THREE.TextureLoader();
 
-/**
- * House
- */
-// Temporary sphere
-const sphere = new THREE.Mesh(
-  new THREE.SphereGeometry(1, 32, 32),
-  new THREE.MeshStandardMaterial({ roughness: 0.7 })
-);
-sphere.position.y = 1;
-scene.add(sphere);
+scene.add(house);
 
 // Floor
 const floor = new THREE.Mesh(
