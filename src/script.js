@@ -4,6 +4,7 @@ import * as dat from "lil-gui";
 
 import { house } from "./house";
 import { graves } from "./graves";
+import { fog } from "./fog";
 import "./style.css";
 
 /**
@@ -51,6 +52,8 @@ gui.add(moonLight.position, "x").min(-5).max(5).step(0.001);
 gui.add(moonLight.position, "y").min(-5).max(5).step(0.001);
 gui.add(moonLight.position, "z").min(-5).max(5).step(0.001);
 scene.add(moonLight);
+
+scene.fog = fog;
 
 /**
  * Sizes
@@ -101,6 +104,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor("#262837");
 
 /**
  * Animate
